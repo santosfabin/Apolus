@@ -43,10 +43,12 @@ const Navbar = () => {
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-apolus-black/80 backdrop-blur-lg py-4 border-bottom border-white/5" : "bg-transparent py-6"}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-2 group cursor-pointer">
-          <div className="w-10 h-10 bg-apolus-green rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+          <div className="w-40 h-20 rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+            {/* Logo e Mascote */}
+           <img src="\img\apolus_name.png" alt="Girl in a jacket" width="700" height="900"/>
             <Zap className="text-apolus-black fill-apolus-black" size={24} />
           </div>
-          <span className="text-2xl font-display font-bold tracking-tighter">APOLUS</span>
+         
         </div>
 
         {/* Desktop Nav */}
@@ -140,39 +142,76 @@ const Hero = () => {
           className="relative flex justify-center"
         >
           {/* Mascot Placeholder (Low Poly Style SVG) */}
-          <div className="relative w-full max-w-md aspect-square">
-            <svg viewBox="0 0 500 500" className="w-full h-full drop-shadow-2xl">
-              <defs>
-                <linearGradient id="polyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#7ED957" />
-                  <stop offset="100%" stopColor="#5B2A86" />
-                </linearGradient>
-              </defs>
-              {/* Abstract Low Poly Mascot Shape */}
-              <motion.path 
-                d="M250 50 L400 150 L350 400 L150 400 L100 150 Z" 
-                fill="url(#polyGrad)"
-                fillOpacity="0.2"
-                stroke="#7ED957"
-                strokeWidth="2"
-                animate={{
-                  d: [
-                    "M250 50 L400 150 L350 400 L150 400 L100 150 Z",
-                    "M250 70 L380 170 L330 380 L170 380 L120 170 Z",
-                    "M250 50 L400 150 L350 400 L150 400 L100 150 Z"
-                  ]
-                }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              />
-              <path d="M250 100 L350 180 L320 350 L180 350 L150 180 Z" fill="#7ED957" fillOpacity="0.1" stroke="#7ED957" strokeWidth="1" />
-              <circle cx="250" cy="250" r="80" fill="#FFC300" fillOpacity="0.1" stroke="#FFC300" strokeWidth="1" />
-              {/* Floating geometric bits */}
-              <motion.rect x="100" y="100" width="20" height="20" fill="#FFC300" animate={{ y: [0, -20, 0], rotate: 45 }} transition={{ duration: 3, repeat: Infinity }} />
-              <motion.polygon points="400,100 420,120 400,140" fill="#7ED957" animate={{ x: [0, 20, 0], rotate: -45 }} transition={{ duration: 4, repeat: Infinity }} />
-            </svg>
-            {/* Mascot Glow */}
-            <div className="absolute inset-0 bg-apolus-green/20 blur-3xl -z-10 rounded-full" />
-          </div>
+<div className="relative w-full max-w-md aspect-square">
+
+  {/* FORMAS GEOMÉTRICAS */}
+  <svg
+    viewBox="0 0 500 500"
+    className="absolute inset-0 w-full h-full drop-shadow-2xl z-0"
+  >
+    <defs>
+      <linearGradient id="polyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#7ED957" />
+        <stop offset="100%" stopColor="#5B2A86" />
+      </linearGradient>
+    </defs>
+
+    {/* Forma principal animada */}
+    <motion.path
+      d="M250 50 L400 150 L350 400 L150 400 L100 150 Z"
+      fill="url(#polyGrad)"
+      fillOpacity="0.2"
+      stroke="#7ED957"
+      strokeWidth="2"
+      animate={{
+        d: [
+          "M250 50 L400 150 L350 400 L150 400 L100 150 Z",
+          "M250 70 L380 170 L330 380 L170 380 L120 170 Z",
+          "M250 50 L400 150 L350 400 L150 400 L100 150 Z"
+        ]
+      }}
+      transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+    />
+
+    {/* Bits flutuando */}
+    <motion.rect
+      x="100"
+      y="100"
+      width="20"
+      height="20"
+      fill="#FFC300"
+      animate={{ y: [0, -20, 0], rotate: 45 }}
+      transition={{ duration: 3, repeat: Infinity }}
+    />
+
+    <motion.polygon
+      points="400,100 420,120 400,140"
+      fill="#7ED957"
+      animate={{ x: [0, 20, 0], rotate: -45 }}
+      transition={{ duration: 4, repeat: Infinity }}
+    />
+  </svg>
+
+  {/* MASCOTE FLUTUANDO */}
+  <motion.img
+    src="/img/apolus_trans.png"
+    alt="Mascote Apolus"
+    className="absolute inset-0 w-full h-full object-contain z-10 pointer-events-none"
+    animate={{
+      y: [0, -20, 0],
+      rotate: [0, 2, -2, 0]
+    }}
+    transition={{
+      duration: 4,
+      repeat: Infinity,
+      ease: "easeInOut"
+    }}
+  />
+
+  {/* GLOW */}
+  <div className="absolute inset-0 bg-apolus-green/20 blur-3xl -z-10 rounded-full" />
+
+</div>
         </motion.div>
       </div>
     </section>
