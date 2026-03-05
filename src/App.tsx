@@ -44,7 +44,7 @@ const Navbar = () => {
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-apolus-black/80 backdrop-blur-lg py-4 border-bottom border-white/5" : "bg-transparent py-6"}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-2 group cursor-pointer">
-          <div className="w-40 h-20 rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+          <div className="w-40 h-20 rounded-lg flex items-center justify-center">
             {/* Logo e Mascote */}
             <img src="\img\apolus\apolus_name.png" alt="Girl in a jacket" width="700" height="900" />
             <Zap className="text-apolus-black fill-apolus-black" size={24} />
@@ -103,16 +103,22 @@ const Navbar = () => {
   );
 };
 
+
+
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-apolus-purple/20 blur-[120px] rounded-full" />
-      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-apolus-green/10 blur-[120px] rounded-full" />
+    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-black">
 
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
+      {/* BACKGROUND BLURS PROFUNDIDADE */}
+      <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-apolus-purple/20 blur-[160px] rounded-full" />
+      <div className="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-apolus-green/10 blur-[160px] rounded-full" />
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-apolus-purple/10 blur-[180px] rounded-full -z-10" />
+
+      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-6 lg:gap-12 items-center relative z-10">
+
+        {/* TEXTO */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 0, x: -60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
@@ -120,18 +126,26 @@ const Hero = () => {
             <span className="w-2 h-2 bg-apolus-purple rounded-full animate-pulse" />
             Freelance Squad
           </div>
-          <h1 className="text-5xl lg:text-7xl font-display font-bold leading-[1.1] mb-6">
+
+          <h1 className="text-5xl lg:text-7xl font-display font-bold leading-[1.05] mb-6">
             Transformamos ideias em{" "}
-            <img
-              src="/img/font/e_font.png"
-              alt="experiências"
-              className="inline-block h-[60px] lg:h-[90px]"
-            />
-            {" "}digitais.
+            <span className="relative inline-block">
+              <img
+                src="/img/font/e_font.png"
+                alt="experiências"
+                className="inline-block h-[65px] lg:h-[95px] drop-shadow-2xl"
+              />
+              <span className="absolute inset-0 bg-apolus-yellow/7 blur-xl -z-10 rounded-full" />
+            </span>{" "}
+            digitais.
           </h1>
+
           <p className="text-lg text-white/60 mb-8 max-w-lg">
-           Somos a Apolus, um estúdio digital independente que cria sites modernos, rápidos e estrategicamente planejados para destacar sua marca e gerar oportunidades reais no ambiente online.
+            Somos a Apolus, um estúdio digital independente que cria sites modernos,
+            rápidos e estrategicamente planejados para destacar sua marca e gerar
+            oportunidades reais no ambiente online.
           </p>
+
           <div className="flex flex-wrap gap-4">
             <a href="#contato" className="btn-primary flex items-center gap-2">
               Solicitar Orçamento <ArrowRight size={18} />
@@ -142,68 +156,82 @@ const Hero = () => {
           </div>
         </motion.div>
 
+        {/* UNIVERSO + MASCOTE */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
           className="relative flex justify-center"
         >
-          {/* Mascot Placeholder (Low Poly Style SVG) */}
           <div className="relative w-full max-w-md aspect-square">
 
-            {/* FORMAS GEOMÉTRICAS */}
+            {/* PLANETA GIRANDO ATRÁS */}
+            <motion.img
+              src="/img/apolus/internet_trans.png"
+              className="absolute top-3 left-[8px] w-full h-full object-contain z-0 opacity-50  drop-shadow-[0_0_20px_purple]"
+              animate={{
+                rotate: -360
+              }}
+              style={{ scale: 0.95 }}
+              transition={{
+                duration: 50,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+            />
+
+            {/* ELEMENTOS DO UNIVERSO */}
             <svg
               viewBox="0 0 500 500"
-              className="absolute inset-0 w-full h-full drop-shadow-2xl z-0"
+              className="absolute -inset-9 w-[120%] h-[120%] z-5"
             >
-              <defs>
-                <linearGradient id="polyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#7ED957" />
-                  <stop offset="100%" stopColor="#5B2A86" />
-                </linearGradient>
-              </defs>
 
-              {/* Forma principal animada */}
-              <motion.path
-                d="M250 50 L400 150 L350 400 L150 400 L100 150 Z"
-                fill="url(#polyGrad)"
-                fillOpacity="0.2"
-                stroke="#7ED957"
+              {/* Anel orbital */}
+              <motion.circle
+                cx="250"
+                cy="250"
+                r="240"
+                fill="none"
+                stroke="#236506"
+                strokeOpacity="0.3"
                 strokeWidth="2"
-                animate={{
-                  d: [
-                    "M250 50 L400 150 L350 400 L150 400 L100 150 Z",
-                    "M250 70 L380 170 L330 380 L170 380 L120 170 Z",
-                    "M250 50 L400 150 L350 400 L150 400 L100 150 Z"
-                  ]
-                }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                strokeDasharray="8 10"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                style={{ originX: "50%", originY: "50%" }}
               />
 
-              {/* Bits flutuando */}
-              <motion.rect
-                x="100"
-                y="100"
-                width="20"
-                height="20"
+              {/* estrelas */}
+              <motion.circle
+                cx="250"
+                cy="30"
+                r="6"
                 fill="#FFC300"
-                animate={{ y: [0, -20, 0], rotate: 45 }}
-                transition={{ duration: 3, repeat: Infinity }}
+                animate={{ rotate: 360 }}
+                transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+                style={{ originX: "250px", originY: "250px" }}
+              />
+                  {/* estrelas */}
+              <motion.circle
+                cx="250"
+                cy="30"
+                r="6"
+                fill="#FFC300"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                style={{ originX: "-250px", originY: "-250px" }}
               />
 
-              <motion.polygon
-                points="400,100 420,120 400,140"
-                fill="#7ED957"
-                animate={{ x: [0, 20, 0], rotate: -45 }}
-                transition={{ duration: 4, repeat: Infinity }}
-              />
+
             </svg>
 
-            {/* MASCOTE FLUTUANDO */}
+            {/* CHÃO DE LUZ */}
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-72 h-24 bg-apolus-green/30 blur-2xl rounded-full opacity-60" />
+
+            {/* MASCOTE */}
             <motion.img
               src="/img/apolus/apolus_trans.png"
-              alt="Mascote Apolus"
-              className="absolute inset-0 w-full h-full object-contain z-10 pointer-events-none"
+              className="absolute inset-0 w-[70%] h-[70%] object-contain z-10 mx-auto my-auto"
               animate={{
                 y: [0, -20, 0],
                 rotate: [0, 2, -2, 0]
@@ -215,11 +243,14 @@ const Hero = () => {
               }}
             />
 
-            {/* GLOW */}
-            <div className="absolute inset-0 bg-apolus-green/20 blur-3xl -z-10 rounded-full" />
+
+
+            {/* GLOW FRONTAL */}
+            <div className="absolute inset-0 bg-apolus-purple/20 blur-3xl -z-10 rounded-full" />
 
           </div>
         </motion.div>
+
       </div>
     </section>
   );
@@ -230,6 +261,24 @@ const About = () => {
     { label: "Projetos Entregues", value: "50+" },
     { label: "Clientes Satisfeitos", value: "30+" },
     { label: "Anos de Experiência", value: "5+" },
+
+
+    
+  ];
+
+  const items = [
+    {
+      title: "Sobre",
+      text: "A Apolus é uma dupla de desenvolvedores web focada em criar experiências digitais modernas, rápidas e visualmente marcantes."
+    },
+    {
+      title: "Objetivo",
+      text: "Nosso objetivo é desenvolver sites, landing pages, interfaces e sistemas personalizados que ajudem empresas e projetos a se destacarem na internet."
+    },
+    {
+      title: "Valores",
+      text: "Trabalhamos com atenção aos detalhes, tecnologia moderna e evolução constante para entregar soluções digitais eficientes e de alta qualidade."
+    }
   ];
 
   return (
@@ -240,42 +289,41 @@ const About = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-16 items-center">
 
+ <div className="space-y-6">
 
-          <div className="space-y-6">
-            {/* Título da seção "Quem Somos" */}
-            <img src="/img/font/qs_font.png" alt="Quem Somos" className="w-64 md:w-72 object-contain" />
+      <img
+        src="/img/font/qs_font.png"
+        alt="Quem Somos"
+        className="w-64 md:w-72 object-contain"
+      />
 
-            <p className="text-white/70 leading-relaxed text-lg">
-              A{" "}
-              <span className="text-apolus-green font-bold">
-                Apolus
-              </span>{" "}
-              é uma dupla de desenvolvedores web apaixonados por criar
-              experiências digitais modernas, performáticas e visualmente
-              marcantes. Estamos construindo nossa trajetória com foco
-              em evolução constante, atenção aos detalhes e entrega de qualidade.
-            </p>
+      <div className="space-y-6 pt-4">
 
-            <div className="space-y-6 pt-4">
+        {items.map((item, index) => (
+          <div key={index} className="flex items-start gap-4">
 
-              {/* Missão */}
-              <div className="flex items-start gap-4">
-                <div className="mt-1 p-3 bg-apolus-green/10 rounded-xl text-apolus-green text-lg">
-                  <img
-                    src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZndld21zNjdxaTdyMGFodHpwcWQzbDV0dWFqcWJyaWVzd241M3Q1ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/RjpwS3HEFqgdALfARj/giphy.gif"
-                    alt="plumbob gif"
-                    className="w-6 h-6"
-                  />
-                </div>
-                <div>
-                  <h4 className="font-bold text-lg">Nossos Serviços</h4>
-                  <p className="text-sm text-white/60 mt-1">
-                    Desenvolvimento Web, Landing Pages, Design UI/UX e Sistemas Personalizados.
-                  </p>
-                </div>
-              </div>
+            <div className="mt-1 p-2 rounded-xl">
+              <img
+                src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZndld21zNjdxaTdyMGFodHpwcWQzbDV0dWFqcWJyaWVzd241M3Q1ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/RjpwS3HEFqgdALfARj/giphy.gif"
+                alt="Cristal"
+                className="w-16 h-7"
+              />
             </div>
+
+            <div>
+              <h4 className="font-bold text-lg">{item.title}</h4>
+              <p className="text-sm text-white/60 mt-1">
+                {item.text}
+              </p>
+            </div>
+
           </div>
+        ))}
+
+      </div>
+
+    </div>
+         
 
           {/* DUPLA */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -299,21 +347,21 @@ const About = () => {
               {/*Redes Sociais - Kaique*/}
               <div className="flex gap-4 justify-center">
                 <a
-                  href="#"
+                  href="https://github.com/KaicolaDS"
                   className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-apolus-green hover:text-apolus-black transition-all"
                 >
                   <Github size={20} />
                 </a>
 
                 <a
-                  href="#"
+                  href="https://www.instagram.com/kaicolakk/"
                   className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-apolus-green hover:text-apolus-black transition-all"
                 >
                   <Instagram size={20} />
                 </a>
 
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/kaique-araujo-fernandes/"
                   className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-apolus-green hover:text-apolus-black transition-all"
                 >
                   <Linkedin size={20} />
@@ -342,21 +390,21 @@ const About = () => {
               {/*Redes Sociais - Fabiano*/}
               <div className="flex gap-4 justify-center">
                 <a
-                  href="#"
+                  href="http://github.com/santosfabin/"
                   className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-apolus-purple hover:text-apolus-black transition-all"
                 >
                   <Github size={20} />
                 </a>
 
                 <a
-                  href="#"
+                  href="https://www.instagram.com/santosfabinz?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                   className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-apolus-purple hover:text-apolus-black transition-all"
                 >
                   <Instagram size={20} />
                 </a>
 
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/santosfabin/"
                   className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-apolus-purple hover:text-apolus-black transition-all"
                 >
                   <Linkedin size={20} />
@@ -476,8 +524,8 @@ const Services = () => {
           {technologies.map((tech, i) => (
             <motion.div
               key={i}
-              whileHover={{ y: -10 }}className={`glass-card p-8 border-t-4 ${tech.color} group transition-all duration-300 hover:shadow-[0_0_20px_rgba(97,238,69,1)]`}
-              
+              whileHover={{ y: -10 }} className={`glass-card p-8 border-t-4 ${tech.color} group transition-all duration-300 hover:shadow-[0_0_20px_rgba(97,238,69,1)]`}
+
             >
 
               <div className="flex items-center gap-3 mb-3">
@@ -545,11 +593,11 @@ const Portfolio = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div>
-                   <img
-            src="/img/font/P_font.png"
-            alt="Tecnologias & Competências"
-            className="w-34 md:w-54 object-contain"
-          />
+            <img
+              src="/img/font/P_font.png"
+              alt="Tecnologias & Competências"
+              className="w-34 md:w-54 object-contain"
+            />
 
             <p className="text-white/60 max-w-md">Uma vitrine de nossas criações mais recentes e desafiadoras.</p>
           </div>
@@ -606,47 +654,54 @@ const Testimonials = () => {
       avatar: "https://picsum.photos/seed/marcos/100/100"
     }
   ];
-
-  return (
-    <section className="py-24">
-      <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-4xl font-display font-bold text-center mb-16">O que dizem sobre nós</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {reviews.map((review, i) => (
-            <div key={i} className="glass-card p-8 flex flex-col justify-between">
-              <p className="text-white/70 italic mb-8">"{review.text}"</p>
-              <div className="flex items-center gap-4">
-                <img src={review.avatar} alt={review.name} className="w-12 h-12 rounded-full border-2 border-apolus-green" referrerPolicy="no-referrer" />
-                <div>
-                  <h4 className="font-bold text-sm">{review.name}</h4>
-                  <p className="text-xs text-white/40">{review.role}</p>
+  /*
+    return (
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-4xl font-display font-bold text-center mb-16">O que dizem sobre nós</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {reviews.map((review, i) => (
+              <div key={i} className="glass-card p-8 flex flex-col justify-between">
+                <p className="text-white/70 italic mb-8">"{review.text}"</p>
+                <div className="flex items-center gap-4">
+                  <img src={review.avatar} alt={review.name} className="w-12 h-12 rounded-full border-2 border-apolus-green" referrerPolicy="no-referrer" />
+                  <div>
+                    <h4 className="font-bold text-sm">{review.name}</h4>
+                    <p className="text-xs text-white/40">{review.role}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
-  );
+      </section>
+    );*/
 };
 
 const Process = () => {
   const steps = [
-    { title: "Planejamento", desc: "Entendemos seu negócio, objetivos e público-alvo para traçar a melhor estratégia." },
-    { title: "Design", desc: "Criamos protótipos e interfaces focadas em usabilidade e identidade visual marcante." },
-    { title: "Desenvolvimento", desc: "Transformamos o design em código limpo, performante e escalável." },
-    { title: "Entrega", desc: "Testes rigorosos, deploy e suporte contínuo para garantir o sucesso do projeto." }
+    { title: "Imersão", desc: "Entendemos profundamente seu negócio, objetivos e público para identificar oportunidades e definir o direcionamento do projeto." },
+    { title: "Proposta", desc: "Apresentamos uma proposta clara com escopo, prazos e investimento definidos, garantindo alinhamento total antes do início." },
+    { title: "Design", desc: "Criamos protótipos e interfaces com foco em usabilidade, performance e uma identidade visual forte e memorável." },
+    { title: "Desenvolvimento", desc: "Transformamos o design em um projeto real, com código limpo, escalável e comunicação constante durante todo o processo." },
+    { title: "Entrega", desc: "Realizamos testes rigorosos, publicação do projeto e oferecemos suporte contínuo para garantir estabilidade e evolução." }
   ];
 
   return (
     <section id="processo" className="py-24 bg-apolus-dark/50">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-display font-bold mb-4">Nosso Processo</h2>
-          <p className="text-white/60">Transparência e método em cada etapa do desenvolvimento.</p>
+        <div className="flex flex-col items-center text-center mb-16">
+          <img
+            src="/img/font/np_font.png"
+            alt="Nosso Processo"
+            className="w-64 md:w-72 object-contain mb-4"
+          />
+          <p className="text-white/60 max-w-xl">
+            Transparência e método em cada etapa do desenvolvimento.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-4 gap-8 relative">
+        <div className="grid md:grid-cols-5 gap-8 relative">
           {/* Connector Line (Desktop) */}
           <div className="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-white/5 -z-10" />
 
@@ -682,7 +737,7 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-16">
           <div>
-            <h2 className="text-4xl font-display font-bold mb-6">Vamos conversar?</h2>
+            <img src="/img/font/vc_font.png" alt="Vamos Conversar?" className="w-64 md:w-72 object-contain" />
             <p className="text-white/60 mb-12">Tem um projeto em mente? Preencha o formulário ou entre em contato pelos nossos canais oficiais.</p>
 
             <div className="space-y-6">
@@ -692,7 +747,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-xs text-white/40 uppercase tracking-widest">WhatsApp</p>
-                  <p className="font-bold">+55 (11) 99999-9999</p>
+                  <p className="font-bold">+55 (11) 91349-1733</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
