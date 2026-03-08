@@ -211,7 +211,7 @@ const Hero = () => {
                 transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
                 style={{ originX: "250px", originY: "250px" }}
               />
-                  {/* estrelas */}
+              {/* estrelas */}
               <motion.circle
                 cx="250"
                 cy="30"
@@ -263,7 +263,7 @@ const About = () => {
     { label: "Anos de Experiência", value: "5+" },
 
 
-    
+
   ];
 
   const items = [
@@ -289,41 +289,41 @@ const About = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-16 items-center">
 
- <div className="space-y-6">
+          <div className="space-y-6">
 
-      <img
-        src="/img/font/qs_font.png"
-        alt="Quem Somos"
-        className="w-64 md:w-72 object-contain"
-      />
+            <img
+              src="/img/font/qs_font.png"
+              alt="Quem Somos"
+              className="w-64 md:w-72 object-contain"
+            />
 
-      <div className="space-y-6 pt-4">
+            <div className="space-y-6 pt-4">
 
-        {items.map((item, index) => (
-          <div key={index} className="flex items-start gap-4">
+              {items.map((item, index) => (
+                <div key={index} className="flex items-start gap-4">
 
-            <div className="mt-1 p-2 rounded-xl">
-              <img
-                src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZndld21zNjdxaTdyMGFodHpwcWQzbDV0dWFqcWJyaWVzd241M3Q1ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/RjpwS3HEFqgdALfARj/giphy.gif"
-                alt="Cristal"
-                className="w-16 h-7"
-              />
-            </div>
+                  <div className="mt-1 p-2 rounded-xl">
+                    <img
+                      src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZndld21zNjdxaTdyMGFodHpwcWQzbDV0dWFqcWJyaWVzd241M3Q1ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/RjpwS3HEFqgdALfARj/giphy.gif"
+                      alt="Cristal"
+                      className="w-16 h-7"
+                    />
+                  </div>
 
-            <div>
-              <h4 className="font-bold text-lg">{item.title}</h4>
-              <p className="text-sm text-white/60 mt-1">
-                {item.text}
-              </p>
+                  <div>
+                    <h4 className="font-bold text-lg">{item.title}</h4>
+                    <p className="text-sm text-white/60 mt-1">
+                      {item.text}
+                    </p>
+                  </div>
+
+                </div>
+              ))}
+
             </div>
 
           </div>
-        ))}
 
-      </div>
-
-    </div>
-         
 
           {/* DUPLA */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -430,39 +430,9 @@ const About = () => {
 const Services = () => {
   const technologies = [
     {
-      title: "Frontend",
-      stack: "HTML5, CSS3, React, TypeScript e Next.js",
-      desc: "Criamos interfaces modernas, organizadas e fáceis de usar, garantindo que seu site seja bonito, intuitivo e funcione perfeitamente em qualquer dispositivo.",
-      color: "border-apolus-green/20"
-    },
-    {
-      title: "Backend & Runtime",
-      stack: "Node.js, PHP, Laravel e Python",
-      desc: "Desenvolvemos toda a parte interna do site para garantir que ele funcione com segurança, rapidez e estabilidade, mesmo com muitos acessos ao mesmo tempo.",
-      color: "border-apolus-yellow/20"
-    },
-    {
-      title: "Banco de Dados",
-      stack: "PostgreSQL e MySQL",
-      desc: "Estruturamos e protegemos as informações do seu negócio para que tudo fique organizado, seguro e acessível sempre que necessário.",
-      color: "border-apolus-purple/20"
-    },
-    {
-      title: "Pagamentos & Integrações",
-      stack: "Stripe, Mercado Pago e Abacate Pay",
-      desc: "Integramos sistemas de pagamento e ferramentas externas para automatizar processos e facilitar a experiência dos seus clientes.",
-      color: "border-apolus-green/20"
-    },
-    {
-      title: "Autenticação & Segurança",
-      stack: "JSON Web Token (JWT)",
-      desc: "Implementamos camadas de segurança para proteger dados e garantir que apenas pessoas autorizadas tenham acesso a áreas específicas do sistema.",
-      color: "border-apolus-yellow/20"
-    },
-    {
-      title: "E-commerce & CMS",
-      stack: "WordPress e Nuvemshop",
-      desc: "Criamos lojas virtuais e sistemas de gerenciamento simples, permitindo que você atualize produtos, conteúdos e informações com facilidade.",
+      title: "Planejamento, Versionamento & Colaboração",
+      stack: "Git, GitHub, Kanban e Xmind",
+      desc: "Trabalhamos com planejamento estratégico e controle de versões para garantir organização, colaboração entre desenvolvedores e entregas consistentes ao longo do projeto.",
       color: "border-apolus-purple/20"
     },
     {
@@ -472,27 +442,39 @@ const Services = () => {
       color: "border-apolus-green/20"
     },
     {
-      title: "SEO & Performance",
-      stack: null,
-      desc: "Otimizamos seu site para que ele carregue rápido e tenha mais chances de aparecer nos mecanismos de busca como o Google.",
-      color: "border-apolus-yellow/20"
-    },
-    {
-      title: "Versionamento & Colaboração",
-      stack: "Git e GitHub",
-      desc: "Utilizamos controle de versões para manter o desenvolvimento organizado e seguro.",
-      color: "border-apolus-purple/20"
-    },
-    {
-      title: "Planejamento & Metodologias Ágeis",
-      stack: "Xmind e Kanban",
-      desc: "Trabalhamos com planejamento e processos organizados para garantir prazos cumpridos e entregas de qualidade.",
+      title: "Frontend",
+      stack: "HTML5, CSS3, React, TypeScript e Next.js",
+      desc: "Criamos interfaces modernas, organizadas e fáceis de usar, garantindo que seu site seja bonito, intuitivo e funcione perfeitamente em qualquer dispositivo.",
       color: "border-apolus-green/20"
     },
     {
-      title: "Ferramentas & Inteligência Artificial",
-      stack: "AI Studio",
-      desc: "Utilizamos ferramentas modernas e recursos de inteligência artificial para tornar soluções mais eficientes e inovadoras.",
+      title: "Backend & Runtime",
+      stack: "Node.js, PHP, Laravel e Python",
+      desc: "Desenvolvemos toda a parte interna do site para garantir que ele funcione com segurança, rapidez e estabilidade, mesmo com muitos acessos ao mesmo tempo. Utilizamos também automações e recursos modernos para tornar processos mais inteligentes e eficientes.",
+      color: "border-apolus-yellow/20"
+    },
+    {
+      title: "Banco de Dados",
+      stack: "PostgreSQL e MySQL",
+      desc: "Estruturamos e protegemos as informações do seu negócio para que tudo fique organizado, seguro e acessível sempre que necessário.",
+      color: "border-apolus-purple/20"
+    },
+    {
+      title: "Autenticação & Segurança",
+      stack: "JSON Web Token (JWT)",
+      desc: "Implementamos camadas de segurança para proteger dados e garantir que apenas pessoas autorizadas tenham acesso a áreas específicas do sistema.",
+      color: "border-apolus-yellow/20"
+    },
+    {
+      title: "Pagamentos & Integrações",
+      stack: "Stripe, Mercado Pago e Abacate Pay",
+      desc: "Integramos sistemas de pagamento e ferramentas externas para automatizar processos e facilitar a experiência dos seus clientes. Também implementamos integrações para lojas virtuais e plataformas de venda online.",
+      color: "border-apolus-green/20"
+    },
+    {
+      title: "SEO & Performance",
+      stack: null,
+      desc: "Otimizamos seu site para que ele carregue rápido e tenha mais chances de aparecer nos mecanismos de busca como o Google.",
       color: "border-apolus-yellow/20"
     },
     {
@@ -563,14 +545,14 @@ const Services = () => {
 const Portfolio = () => {
   const projects = [
     {
-      title: "Nexus Dashboard",
-      category: "SaaS / UI UX",
-      image: "https://picsum.photos/seed/nexus/800/600",
+      title: "Vitor Araujo Advogado",
+      category: "Site Institucional",
+      image: "https://ldjadvocacia.com.br/wp-content/uploads/2022/11/lady-justice-law-library-concept-1-2048x1365.jpg",
       link: "#"
     },
     {
-      title: "EcoFlow Landing",
-      category: "Web Design",
+      title: "Garimpo",
+      category: "Aplicação Web",
       image: "https://picsum.photos/seed/eco/800/600",
       link: "#"
     },
@@ -599,11 +581,9 @@ const Portfolio = () => {
               className="w-34 md:w-54 object-contain"
             />
 
-            <p className="text-white/60 max-w-md">Uma vitrine de nossas criações mais recentes e desafiadoras.</p>
+            <p className="text-white/60 max-w-md">Conheça alguns dos nosso projetos recentes que mostram como transformamos ideias em soluções digitais modernas e eficientes.</p>
           </div>
-          <a href="#" className="text-apolus-green font-bold flex items-center gap-2 hover:underline">
-            Ver todos no Behance <ExternalLink size={18} />
-          </a>
+
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -683,7 +663,7 @@ const Process = () => {
     { title: "Imersão", desc: "Entendemos profundamente seu negócio, objetivos e público para identificar oportunidades e definir o direcionamento do projeto." },
     { title: "Proposta", desc: "Apresentamos uma proposta clara com escopo, prazos e investimento definidos, garantindo alinhamento total antes do início." },
     { title: "Design", desc: "Criamos protótipos e interfaces com foco em usabilidade, performance e uma identidade visual forte e memorável." },
-    { title: "Desenvolvimento", desc: "Transformamos o design em um projeto real, com código limpo, escalável e comunicação constante durante todo o processo." },
+    { title: "Construção", desc: "Transformamos o design em um projeto real, com código limpo, escalável e comunicação constante durante todo o processo." },
     { title: "Entrega", desc: "Realizamos testes rigorosos, publicação do projeto e oferecemos suporte contínuo para garantir estabilidade e evolução." }
   ];
 
@@ -814,12 +794,9 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-2">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-8 bg-apolus-green rounded flex items-center justify-center">
-                <Zap className="text-apolus-black fill-apolus-black" size={18} />
-              </div>
-              <span className="text-xl font-display font-bold tracking-tighter">APOLUS</span>
-            </div>
+
+            <img src="\img\apolus\apolus_name.png" alt="Girl in a jacket" width="120" height="200" />
+
             <p className="text-white/40 text-sm max-w-sm">
               Transformando o complexo em simples. Sua equipe de freelancers especializada em entregar excelência digital.
             </p>
@@ -836,27 +813,40 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-bold mb-6">Redes Sociais</h4>
-            <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-apolus-green hover:text-apolus-black transition-all">
-                <Github size={20} />
-              </a>
-              <a href="#" className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-apolus-green hover:text-apolus-black transition-all">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-apolus-green hover:text-apolus-black transition-all">
-                <Linkedin size={20} />
-              </a>
-            </div>
+            <h4 className="font-bold mb-5">Redes Sociais</h4>
+
+            <ul className="space-y-3 text-sm text-white/40">
+              <li className="mb-1"><a >Fabiano Santos</a></li>
+              <div className="flex gap-4 mb-4">
+                <a href="http://github.com/santosfabin/" className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-apolus-purple hover:text-apolus-black transition-all">
+                  <Github size={20} />
+                </a>
+                <a href="https://www.instagram.com/santosfabinz?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-apolus-purple hover:text-apolus-black transition-all">
+                  <Instagram size={20} />
+                </a>
+                <a href="https://www.linkedin.com/in/santosfabin/" className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-apolus-purple hover:text-apolus-black transition-all">
+                  <Linkedin size={20} />
+                </a>
+              </div>
+
+              <li className="mb-1"><a>Kaique Araujo Fernandes</a></li>
+              <div className="flex gap-4">
+                <a href="https://github.com/KaicolaDS" className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-apolus-green hover:text-apolus-black transition-all">
+                  <Github size={20} />
+                </a>
+                <a href="https://www.instagram.com/kaicolakk/" className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-apolus-green hover:text-apolus-black transition-all">
+                  <Instagram size={20} />
+                </a>
+                <a href="https://www.linkedin.com/in/kaique-araujo-fernandes/" className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-apolus-green hover:text-apolus-black transition-all">
+                  <Linkedin size={20} />
+                </a>
+              </div>
+            </ul>
           </div>
         </div>
 
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/20">
-          <p>© 2024 Apolus Freelance Squad. Todos os direitos reservados.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Privacidade</a>
-            <a href="#" className="hover:text-white transition-colors">Termos de Uso</a>
-          </div>
+          <p>© 2026 Apolus Freelance Squad. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>
