@@ -146,11 +146,11 @@ const Hero = () => {
             oportunidades reais no ambiente online.
           </p>
 
-          <div className="flex flex-wrap gap-4">
-            <a href="#contato" className="btn-primary flex items-center gap-2">
-              Solicitar Orçamento <ArrowRight size={18} />
+          <div className="flex flex-col md:flex-row gap-4 w-full max-w-md mx-auto md:mx-0">
+            <a href="#contato" className="btn-primary flex items-center justify-center gap-2 w-full whitespace-nowrap">
+              Solicitar Orçamento <ArrowRight size={20} />
             </a>
-            <a href="#portfolio" className="btn-secondary">
+            <a href="#portfolio" className="btn-secondary flex items-center justify-center w-full">
               Ver Projetos
             </a>
           </div>
@@ -294,7 +294,7 @@ const About = () => {
             <img
               src="/img/font/qs_font.png"
               alt="Quem Somos"
-              className="w-64 md:w-72 object-contain"
+              className="w-64 md:w-72 object-contain mx-auto md:mx-0"
             />
 
             <div className="space-y-6 pt-4">
@@ -354,13 +354,6 @@ const About = () => {
                 </a>
 
                 <a
-                  href="https://www.instagram.com/kaicolakk/"
-                  className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-apolus-green hover:text-apolus-black transition-all"
-                >
-                  <Instagram size={20} />
-                </a>
-
-                <a
                   href="https://www.linkedin.com/in/kaique-araujo-fernandes/"
                   className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-apolus-green hover:text-apolus-black transition-all"
                 >
@@ -395,14 +388,6 @@ const About = () => {
                 >
                   <Github size={20} />
                 </a>
-
-                <a
-                  href="https://www.instagram.com/santosfabinz?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                  className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-apolus-purple hover:text-apolus-black transition-all"
-                >
-                  <Instagram size={20} />
-                </a>
-
                 <a
                   href="https://www.linkedin.com/in/santosfabin/"
                   className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-apolus-purple hover:text-apolus-black transition-all"
@@ -577,11 +562,11 @@ const Portfolio = () => {
           <div>
             <img
               src="/img/font/P_font.png"
-              alt="Tecnologias & Competências"
-              className="w-34 md:w-54 object-contain"
+              alt="Portfólio"
+              className="w-34 md:w-54 mb-4 object-contain mx-auto md:mx-0"
             />
 
-            <p className="text-white/60 max-w-md">Conheça alguns dos nosso projetos recentes que mostram como transformamos ideias em soluções digitais modernas e eficientes.</p>
+            <p className="text-white/60 mb-0 text-center md:text-left">Conheça alguns dos nosso projetos recentes que mostram como transformamos ideias em soluções digitais modernas e eficientes.</p>
           </div>
 
         </div>
@@ -717,8 +702,13 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-16">
           <div>
-            <img src="/img/font/vc_font.png" alt="Vamos Conversar?" className="w-64 md:w-72 object-contain" />
-            <p className="text-white/60 mb-12">Tem um projeto em mente? Preencha o formulário ou entre em contato pelos nossos canais oficiais.</p>
+            <img
+              src="/img/font/vc_font.png"
+              alt="Vamos Conversar?"
+              className="w-64 md:w-72 mb-4 object-contain mx-auto md:mx-0"
+            />
+
+            <p className="text-white/60 mb-12 text-center md:text-left">Tem um projeto em mente? Preencha o formulário ou entre em contato pelos nossos canais oficiais.</p>
 
             <div className="space-y-6">
               <div className="flex items-center gap-4">
@@ -727,7 +717,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-xs text-white/40 uppercase tracking-widest">WhatsApp</p>
-                  <p className="font-bold">+55 (11) 91349-1733</p>
+                  <a href="https://wa.me/5511913491733" className="hover:text-apolus-green transition-colors duration-500" ><p className="font-bold">+55 (11) 91349-1733</p></a>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -821,9 +811,7 @@ const Footer = () => {
                 <a href="http://github.com/santosfabin/" className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-apolus-purple hover:text-apolus-black transition-all">
                   <Github size={20} />
                 </a>
-                <a href="https://www.instagram.com/santosfabinz?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-apolus-purple hover:text-apolus-black transition-all">
-                  <Instagram size={20} />
-                </a>
+      
                 <a href="https://www.linkedin.com/in/santosfabin/" className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-apolus-purple hover:text-apolus-black transition-all">
                   <Linkedin size={20} />
                 </a>
@@ -833,9 +821,6 @@ const Footer = () => {
               <div className="flex gap-4">
                 <a href="https://github.com/KaicolaDS" className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-apolus-green hover:text-apolus-black transition-all">
                   <Github size={20} />
-                </a>
-                <a href="https://www.instagram.com/kaicolakk/" className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-apolus-green hover:text-apolus-black transition-all">
-                  <Instagram size={20} />
                 </a>
                 <a href="https://www.linkedin.com/in/kaique-araujo-fernandes/" className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-apolus-green hover:text-apolus-black transition-all">
                   <Linkedin size={20} />
